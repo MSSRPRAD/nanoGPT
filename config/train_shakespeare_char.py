@@ -13,7 +13,7 @@ wandb_log = False # override via command line if you like
 wandb_project = 'shakespeare-char'
 wandb_run_name = 'mini-gpt'
 
-# dataset = 'shakespeare_char'
+dataset = 'shakespeare_char'
 gradient_accumulation_steps = 1
 batch_size = 64
 block_size = 256 # context of up to 256 previous characters
@@ -30,8 +30,8 @@ lr_decay_iters = 5000 # make equal to max_iters usually
 min_lr = 1e-4 # learning_rate / 10 usually
 beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
 
-warmup_iters = 100 # not super necessary potentially
+warmup_iters = 1 # not super necessary potentially
 
 # on macbook also add
-# device = 'cpu'  # run on cpu only
-# compile = False # do not torch compile the model
+device = 'cpu'  # run on cpu only
+compile = False # do not torch compile the model
