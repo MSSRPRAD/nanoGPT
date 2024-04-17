@@ -16,7 +16,7 @@ wandb_run_name = 'circuits-run'
 dataset = 'circuits'
 gradient_accumulation_steps = 1
 batch_size = 12
-block_size = 50 # context of up to 50 previous words
+block_size = 400 # context of up to 400 previous words
 
 # baby GPT model :)
 n_layer = 2
