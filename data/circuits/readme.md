@@ -1,5 +1,5 @@
 
-# circuits (Harry Potter)
+# circuits
 
 After running `prepare.py`:
 
