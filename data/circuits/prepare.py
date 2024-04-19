@@ -56,8 +56,6 @@ if not os.path.exists(input_file_path):
         print("Writing Wikidata en descriptions......")
         wikidata_en_desc_dataset = load_dataset("derenrich/wikidata-en-descriptions-small")
         for item in wikidata_en_desc_dataset['train']:
-            print(item['input'])
-            input()
             f.write(item['input'])
             f.write("\n\n") 
         print("Writing stanford encyclopedia philosophy.....")
