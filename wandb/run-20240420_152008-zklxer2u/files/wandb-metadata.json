@@ -1,0 +1,82 @@
+{
+    "os": "Linux-6.8.4-200.fc39.x86_64-x86_64-with-glibc2.38",
+    "python": "3.12.2",
+    "heartbeatAt": "2024-04-20T09:50:09.206532",
+    "startedAt": "2024-04-20T09:50:08.194923",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "config/train_circuits.py"
+    ],
+    "state": "running",
+    "program": "/home/mpradyumna/Documents/GitHub/nanoGPT/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/MSSRPRAD/nanoGPT.git",
+        "commit": "08797c7a2cfa9f606198d4ea3d73cd54f22f9499"
+    },
+    "email": "98510624+MSSRPRAD@users.noreply.github.com",
+    "root": "/home/mpradyumna/Documents/GitHub/nanoGPT",
+    "host": "fedora",
+    "username": "mpradyumna",
+    "executable": "/home/mpradyumna/Documents/GitHub/nanoGPT/venv/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2043.834875,
+        "min": 400.0,
+        "max": 3900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1949.905,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2700.0,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 515.664,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 693.99,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1718.731,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2699.972,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 1331.66,
+            "min": 400.0,
+            "max": 3900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 99.0009765625,
+            "used": 24.565013885498047
+        }
+    },
+    "memory": {
+        "total": 15.361747741699219
+    }
+}

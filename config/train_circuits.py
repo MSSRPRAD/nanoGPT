@@ -15,11 +15,11 @@ wandb_run_name = 'circuits-run'
 
 dataset = 'circuits'
 gradient_accumulation_steps = 1
-batch_size = 12
-block_size = 400 # context of up to 400 previous words
+batch_size = 24
+block_size = 1000 # context of up to 1000 previous words
 
 # baby GPT model :)
-n_layer = 2
+n_layer = 1
 n_head = 12
 n_embd = 384
 dropout = 0.2
@@ -28,10 +28,11 @@ learning_rate = 1e-3 # with baby networks can afford to go a bit higher
 max_iters = 5000
 lr_decay_iters = 5000 # make equal to max_iters usually
 min_lr = 1e-4 # learning_rate / 10 usually
-beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+beta2 = 0.90 # make a bit bigger because number of tokens per iter is small
 
 warmup_iters = 100 # not super necessary potentially
 
 # on macbook also add
 # device = 'cpu'  # run on cpu only
 compile = True # Torch compile the model
+# compile = False
