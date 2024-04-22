@@ -10,12 +10,12 @@ log_interval = 10 # don't print too too often
 always_save_checkpoint = False
 
 wandb_log = True # override via command line if you like
-wandb_project = 'circuits'
+wandb_project = 'ICL_BPHC'
 wandb_run_name = 'circuits-run'
 
 dataset = 'circuits'
 gradient_accumulation_steps = 1
-batch_size = 24
+batch_size = 16
 block_size = 1000 # context of up to 1000 previous words
 
 # baby GPT model :)
@@ -25,7 +25,7 @@ n_embd = 384
 dropout = 0.2
 
 learning_rate = 1e-3 # with baby networks can afford to go a bit higher
-max_iters = 5000
+max_iters = 50000
 lr_decay_iters = 5000 # make equal to max_iters usually
 min_lr = 1e-4 # learning_rate / 10 usually
 beta2 = 0.90 # make a bit bigger because number of tokens per iter is small
@@ -35,4 +35,3 @@ warmup_iters = 100 # not super necessary potentially
 # on macbook also add
 # device = 'cpu'  # run on cpu only
 compile = True # Torch compile the model
-# compile = False

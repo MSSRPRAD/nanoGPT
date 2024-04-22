@@ -1,0 +1,35 @@
+
+step 0: train loss 10.8833, val loss 10.9081
+iter 0: loss 10.8897, time 43417.25ms, mfu -100.00%
+iter 10: loss 10.6941, time 148.48ms, mfu 8.34%
+iter 20: loss 9.8753, time 149.13ms, mfu 8.34%
+iter 30: loss 9.0537, time 149.07ms, mfu 8.33%
+iter 40: loss 7.8402, time 149.52ms, mfu 8.33%
+iter 50: loss 7.2810, time 149.37ms, mfu 8.32%
+iter 60: loss 6.3678, time 149.78ms, mfu 8.32%
+iter 70: loss 5.9580, time 149.64ms, mfu 8.31%
+iter 80: loss 6.8371, time 149.56ms, mfu 8.31%
+iter 90: loss 6.4476, time 149.27ms, mfu 8.31%
+iter 100: loss 5.7726, time 149.38ms, mfu 8.31%
+iter 110: loss 6.1920, time 148.95ms, mfu 8.31%
+iter 120: loss 4.8791, time 149.60ms, mfu 8.30%
+iter 130: loss 4.6264, time 149.40ms, mfu 8.30%
+iter 140: loss 5.4090, time 149.36ms, mfu 8.30%
+iter 150: loss 5.9685, time 149.66ms, mfu 8.30%
+iter 160: loss 5.7576, time 150.05ms, mfu 8.29%
+iter 170: loss 4.5073, time 149.48ms, mfu 8.29%
+iter 180: loss 5.1905, time 149.51ms, mfu 8.29%
+iter 190: loss 5.1250, time 148.93ms, mfu 8.29%
+iter 200: loss 4.6944, time 149.57ms, mfu 8.29%
+iter 210: loss 4.3347, time 149.40ms, mfu 8.29%
+iter 220: loss 4.6759, time 149.62ms, mfu 8.29%
+iter 230: loss 5.0406, time 149.29ms, mfu 8.29%
+iter 240: loss 5.3755, time 149.71ms, mfu 8.29%
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/nanoGPT/train.py", line 264, in <module>
+    losses = estimate_loss()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/teamspace/studios/this_studio/nanoGPT/train.py", line 225, in estimate_loss
+    losses[k] = loss.item()
+KeyboardInterrupt

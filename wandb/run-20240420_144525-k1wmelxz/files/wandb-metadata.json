@@ -1,0 +1,62 @@
+{
+    "os": "Linux-5.15.0-1056-aws-x86_64-with-glibc2.31",
+    "python": "3.10.10",
+    "heartbeatAt": "2024-04-20T14:45:25.509823",
+    "startedAt": "2024-04-20T14:45:25.200862",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "config/train_circuits.py"
+    ],
+    "state": "running",
+    "program": "/teamspace/studios/this_studio/nanoGPT/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://www.github.com/mssrprad/nanoGPT",
+        "commit": "d7fe2923aa313de5d7757f4b8993224c01826020"
+    },
+    "email": null,
+    "root": "/teamspace/studios/this_studio/nanoGPT",
+    "host": "ip-10-192-12-242",
+    "username": "zeus",
+    "executable": "/home/zeus/miniconda3/envs/cloudspace/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2650.99075,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2499.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3103.969,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2499.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2499.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 387.4823341369629,
+            "used": 36.2474365234375
+        }
+    },
+    "memory": {
+        "total": 15.325729370117188
+    }
+}

@@ -9,6 +9,7 @@ import tiktoken
 from model import GPTConfig, GPT
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 # -----------------------------------------------------------------------------
 init_from = 'resume' # either 'resume' (from an out_dir) or a gpt2 variant (e.g. 'gpt2-xl')
@@ -85,6 +86,7 @@ x = (torch.tensor(start_ids, dtype=torch.long, device=device)[None, ...])
 
 # -----------------------------------------------------------------------------
 def save_attentions(attentions, output_dir, x_labels, y_labels):
+    # return
     num_layers = len(attentions)
     num_heads = attentions[0].size(1)  # Assuming all layers have the same number of heads
     num_tokens = attentions[0].size(-1)
@@ -99,10 +101,49 @@ def save_attentions(attentions, output_dir, x_labels, y_labels):
             plt.savefig(os.path.join(output_dir, f"layer_{layer_idx}_head_{head_idx}.png"))
             plt.close()
 # -----------------------------------------------------------------------------
+import itertools
+import seaborn as sns
+def argand(a, output_dir, layer_idx, head_idx):
+    # Calculate log magnitudes and angles
+    log_magnitudes = [np.log(np.abs(z)) for z in a]
+    # log_magnitudes = [np.log(z) for z in log_magnitudes]
+    max_log_magnitude = max(log_magnitudes)
+    log_magnitudes /= max_log_magnitude
+    angles = [np.angle(z) for z in a]
+    
+    # Set up the figure
+    fig, ax = plt.subplots(figsize=(8, 8))  # Increase figure size
+    ax.set_aspect('equal')  # Set equal aspect ratio
+    ax.set_xlim(-1.1, 1.1)  # Set x-axis limits
+    ax.set_ylim(-1.1, 1.1)  # Set y-axis limits
+    ax.spines['left'].set_position('center')  # Move left spine to center
+    ax.spines['bottom'].set_position('center')  # Move bottom spine to center
+    ax.spines['right'].set_visible(False)  # Hide right spine
+    ax.spines['top'].set_visible(False)  # Hide top spine
+    ax.set_xlabel('Real', fontsize=5)  # Add x-axis label
+    ax.set_ylabel('Imaginary', fontsize=5)  # Add y-axis label
+    
+    # Plot the points
+    colors = sns.color_palette("hls", len(a))  # Get a colormap
+    for root, c, log_mag, angle in zip(a, colors, log_magnitudes, angles):
+        normalized_log_mag = log_mag  # Convert log magnitude back to normal magnitude
+        ax.plot(normalized_log_mag * np.cos(angle), normalized_log_mag * np.sin(angle), marker='x', color=c, markersize=10, alpha=0.8)  # Plot with circles
+    
+    # Add a circle at the unit circle
+    theta = np.linspace(0, 2*np.pi, 100)
+    ax.plot(np.cos(theta), np.sin(theta), 'k--', linewidth=1)  # Plot the unit circle
+    
+    # Save the figure
+    plt.tight_layout()  # Adjust spacing
+    plt.savefig(os.path.join(output_dir, f"layer_{layer_idx}_head_{head_idx}.png"), dpi=300, bbox_inches='tight')  # Save with higher resolution
+    plt.close()
+
+# -----------------------------------------------------------------------------
 
 # run generation
 out_basedir = "circuits"
 attn_imagedir = out_basedir + "/attention_images"
+eigenvals_dir = out_basedir + "/eigenvalues"
 os.makedirs(out_basedir, exist_ok=True)
 os.makedirs(attn_imagedir, exist_ok = True)
 with torch.no_grad():
@@ -123,4 +164,28 @@ with torch.no_grad():
         print('---------------Predicted Logits')
         print(x[0].shape)
         print(model.logits.shape)
+        print('---------------Eigenvalues of OV Circuit')
+        W_u = model.lm_head.weight
+        W_e = model.transformer.wte.weight
+        print(W_u.shape, W_e.shape)
+        idx = 0
+        for block in model.transformer.h:
+            W_o = block.attn.c_proj.weight
+            W_v = block.attn.c_attn_v
+            for it in W_v:
+                W_vh = it.weight
+                matrix = W_vh @  W_e @ W_u @ W_o
+                # print(matrix.shape)
+                # print("reached here")
+                eigenvalue = torch.linalg.eigvals(matrix).tolist()
+                # print(eigenvalue[0].real)
+                # print(eigenvalue[0].imag)
+                # print(eigenvalue)
+                argand(eigenvalue, eigenvals_dir, 0, idx)
+                idx += 1
+                print('---------')
+                # print(W_vh.shape)
+                # print(W_o.shape)
+                # input()
         print('---------------END')
+

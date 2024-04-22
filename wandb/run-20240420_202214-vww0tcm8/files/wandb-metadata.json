@@ -1,0 +1,210 @@
+{
+    "os": "Linux-5.15.0-1057-aws-x86_64-with-glibc2.31",
+    "python": "3.10.10",
+    "heartbeatAt": "2024-04-20T20:22:14.399681",
+    "startedAt": "2024-04-20T20:22:14.067521",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "config/train_circuits.py"
+    ],
+    "state": "running",
+    "program": "/teamspace/studios/this_studio/nanoGPT/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://www.github.com/mssrprad/nanoGPT",
+        "commit": "d7fe2923aa313de5d7757f4b8993224c01826020"
+    },
+    "email": null,
+    "root": "/teamspace/studios/this_studio/nanoGPT",
+    "host": "ip-10-192-12-41",
+    "username": "zeus",
+    "executable": "/home/zeus/miniconda3/envs/cloudspace/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2829.9397812500006,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3276.595,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.932,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 387.4823341369629,
+            "used": 59.3833122253418
+        }
+    },
+    "gpu": "NVIDIA A10G",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A10G",
+            "memory_total": 24146608128
+        }
+    ],
+    "memory": {
+        "total": 124.45762252807617
+    }
+}

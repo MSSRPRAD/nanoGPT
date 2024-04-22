@@ -32,9 +32,20 @@ class CausalSelfAttention(nn.Module):
         super().__init__()
         assert config.n_embd % config.n_head == 0
         # key, query, value projections for all heads, but in a batch
-        self.c_attn_q = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
-        self.c_attn_k = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
-        self.c_attn_v = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
+        # self.c_attn_q = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
+        # self.c_attn_k = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
+        # self.c_attn_v = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
+        self.c_attn_q = nn.ModuleList(
+            [nn.Linear(config.n_embd, config.n_embd // config.n_head, bias=config.bias) for _ in range(config.n_head)]
+            )
+        self.c_attn_k = nn.ModuleList(
+            [nn.Linear(config.n_embd, config.n_embd // config.n_head, bias=config.bias) for _ in range(config.n_head)]
+            )
+        self.c_attn_v = nn.ModuleList(
+            [nn.Linear(config.n_embd, config.n_embd // config.n_head, bias=config.bias) for _ in range(config.n_head)]
+            )
+        
+
         # output projection
         self.c_proj = nn.Linear(config.n_embd // config.n_head, config.n_embd, bias=config.bias)
         # regularization
@@ -57,19 +68,25 @@ class CausalSelfAttention(nn.Module):
         # Circuits
         self.circuit = False
         self.attentions = None
-
     def forward(self, x):
         B, T, C = x.size() # batch size, sequence length, embedding dimensionality (n_embd)
         # calculate query, key, values for all heads in batch and move head forward to be the batch dim
         pos = torch.arange(0, T, dtype=torch.long, device=x.device) # shape (t)
         pos_emb = self.wpe(pos)
-        q = self.c_attn_q(self.posn_dropout(x + pos_emb))
-        k = self.c_attn_k(self.posn_dropout(x + pos_emb))
-        v = self.c_attn_v(x)
-        k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
-        q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
-        v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
 
+        q = []
+        for ll in self.c_attn_q:
+            q.append(ll(self.posn_dropout(x + pos_emb)))
+        k = []
+        for ll in self.c_attn_k:
+            k.append(ll(self.posn_dropout(x + pos_emb)))
+        v = []
+        for ll in self.c_attn_v:
+            v.append(ll(self.posn_dropout(x)))
+        q = torch.stack(q, dim=2).permute(0, 2, 1, 3)
+        k = torch.stack(k, dim=2).permute(0, 2, 1, 3)
+        v = torch.stack(v, dim=2).permute(0, 2, 1, 3)
+        
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
         if self.flash:
             # efficient attention using Flash Attention CUDA kernels
@@ -91,6 +108,8 @@ class CausalSelfAttention(nn.Module):
             y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
         y = torch.sum(y.transpose(1, 2), dim=2)
         y = self.resid_dropout(self.c_proj(y))
+        # print("reached")
+        # input()
         return y
 
 class MLP(nn.Module):

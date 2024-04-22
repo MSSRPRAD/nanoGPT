@@ -1,0 +1,35 @@
+
+step 0: train loss 10.8835, val loss 10.9081
+iter 0: loss 10.8841, time 56912.73ms, mfu -100.00%
+iter 10: loss 10.6432, time 4.49ms, mfu 413.81%
+iter 20: loss 9.9761, time 4.01ms, mfu 418.76%
+iter 30: loss 8.8862, time 3.90ms, mfu 424.51%
+iter 40: loss 7.6389, time 4.03ms, mfu 428.18%
+iter 50: loss 6.8907, time 3.88ms, mfu 433.22%
+iter 60: loss 6.4997, time 3.89ms, mfu 437.66%
+iter 70: loss 6.1707, time 3.89ms, mfu 441.65%
+iter 80: loss 5.6259, time 3.90ms, mfu 445.17%
+iter 90: loss 5.5513, time 3.91ms, mfu 448.10%
+iter 100: loss 5.3807, time 3.91ms, mfu 450.82%
+iter 110: loss 5.4880, time 3.88ms, mfu 453.63%
+iter 120: loss 5.5746, time 4.10ms, mfu 453.54%
+iter 130: loss 4.8394, time 3.91ms, mfu 455.73%
+iter 140: loss 4.6494, time 3.91ms, mfu 457.63%
+iter 150: loss 4.8075, time 3.94ms, mfu 458.99%
+iter 160: loss 4.9188, time 3.90ms, mfu 460.76%
+iter 170: loss 5.0164, time 3.90ms, mfu 462.34%
+iter 180: loss 5.0469, time 4.15ms, mfu 460.85%
+iter 190: loss 5.3548, time 4.10ms, mfu 460.10%
+iter 200: loss 5.1106, time 4.06ms, mfu 459.80%
+iter 210: loss 4.7984, time 4.08ms, mfu 459.32%
+iter 220: loss 4.5157, time 4.07ms, mfu 459.05%
+iter 230: loss 4.4382, time 4.06ms, mfu 458.86%
+iter 240: loss 5.1661, time 3.92ms, mfu 460.40%
+step 250: train loss 4.6977, val loss 6.5567
+saving checkpoint to out-circuits
+iter 250: loss 4.9056, time 37812.11ms, mfu 414.37%
+iter 260: loss 4.7959, time 3.92ms, mfu 420.33%
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/nanoGPT/train.py", line 323, in <module>
+    lossf = loss.item() * gradient_accumulation_steps
+KeyboardInterrupt

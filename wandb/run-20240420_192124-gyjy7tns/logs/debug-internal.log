@@ -1,0 +1,112 @@
+2024-04-20 19:21:24,597 INFO    StreamThr :53394 [internal.py:wandb_internal():86] W&B internal server running at pid: 53394, started at: 2024-04-20 19:21:24.596749
+2024-04-20 19:21:24,598 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status
+2024-04-20 19:21:24,599 INFO    WriterThread:53394 [datastore.py:open_for_write():87] open: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/run-gyjy7tns.wandb
+2024-04-20 19:21:24,600 DEBUG   SenderThread:53394 [sender.py:send():379] send: header
+2024-04-20 19:21:24,617 DEBUG   SenderThread:53394 [sender.py:send():379] send: run
+2024-04-20 19:21:24,855 INFO    SenderThread:53394 [dir_watcher.py:__init__():211] watching files in: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files
+2024-04-20 19:21:24,855 INFO    SenderThread:53394 [sender.py:_start_run_threads():1124] run started: gyjy7tns with start time 1713640884.596377
+2024-04-20 19:21:24,861 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: check_version
+2024-04-20 19:21:24,861 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: check_version
+2024-04-20 19:21:24,905 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: run_start
+2024-04-20 19:21:24,931 DEBUG   HandlerThread:53394 [system_info.py:__init__():26] System info init
+2024-04-20 19:21:24,932 DEBUG   HandlerThread:53394 [system_info.py:__init__():41] System info init done
+2024-04-20 19:21:24,932 INFO    HandlerThread:53394 [system_monitor.py:start():194] Starting system monitor
+2024-04-20 19:21:24,932 INFO    SystemMonitor:53394 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-20 19:21:24,932 INFO    HandlerThread:53394 [system_monitor.py:probe():214] Collecting system info
+2024-04-20 19:21:24,933 INFO    SystemMonitor:53394 [interfaces.py:start():190] Started cpu monitoring
+2024-04-20 19:21:24,933 INFO    SystemMonitor:53394 [interfaces.py:start():190] Started disk monitoring
+2024-04-20 19:21:24,934 INFO    SystemMonitor:53394 [interfaces.py:start():190] Started gpu monitoring
+2024-04-20 19:21:24,935 INFO    SystemMonitor:53394 [interfaces.py:start():190] Started memory monitoring
+2024-04-20 19:21:24,935 INFO    SystemMonitor:53394 [interfaces.py:start():190] Started network monitoring
+2024-04-20 19:21:24,943 DEBUG   HandlerThread:53394 [system_info.py:probe():150] Probing system
+2024-04-20 19:21:24,945 DEBUG   HandlerThread:53394 [system_info.py:_probe_git():135] Probing git
+2024-04-20 19:21:24,979 DEBUG   HandlerThread:53394 [system_info.py:_probe_git():143] Probing git done
+2024-04-20 19:21:24,979 DEBUG   HandlerThread:53394 [system_info.py:probe():198] Probing system done
+2024-04-20 19:21:24,979 DEBUG   HandlerThread:53394 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-1057-aws-x86_64-with-glibc2.31', 'python': '3.10.10', 'heartbeatAt': '2024-04-20T19:21:24.943961', 'startedAt': '2024-04-20T19:21:24.591703', 'docker': None, 'cuda': None, 'args': ('config/train_circuits.py',), 'state': 'running', 'program': '/teamspace/studios/this_studio/nanoGPT/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'https://www.github.com/mssrprad/nanoGPT', 'commit': 'd7fe2923aa313de5d7757f4b8993224c01826020'}, 'email': None, 'root': '/teamspace/studios/this_studio/nanoGPT', 'host': 'ip-10-192-12-203', 'username': 'zeus', 'executable': '/home/zeus/miniconda3/envs/cloudspace/bin/python', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2824.9497500000016, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 3296.299, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}, {'current': 2799.998, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 387.4823341369629, 'used': 59.36479187011719}}, 'gpu': 'NVIDIA A10G', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA A10G', 'memory_total': 24146608128}], 'memory': {'total': 124.45761489868164}}
+2024-04-20 19:21:24,979 INFO    HandlerThread:53394 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-20 19:21:24,979 INFO    HandlerThread:53394 [system_monitor.py:probe():227] Publishing system info
+2024-04-20 19:21:24,979 DEBUG   HandlerThread:53394 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-20 19:21:25,856 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_created():271] file/dir created: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/conda-environment.yaml
+2024-04-20 19:21:27,759 DEBUG   HandlerThread:53394 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-20 19:21:27,759 INFO    HandlerThread:53394 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-20 19:21:27,763 DEBUG   SenderThread:53394 [sender.py:send():379] send: files
+2024-04-20 19:21:27,763 INFO    SenderThread:53394 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-20 19:21:27,856 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_modified():288] file/dir modified: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/conda-environment.yaml
+2024-04-20 19:21:27,856 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_created():271] file/dir created: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/wandb-metadata.json
+2024-04-20 19:21:27,899 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-20 19:21:27,900 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: python_packages
+2024-04-20 19:21:27,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:21:27,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:21:27,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:21:27,963 DEBUG   SenderThread:53394 [sender.py:send():379] send: telemetry
+2024-04-20 19:21:28,083 INFO    wandb-upload_0:53394 [upload_job.py:push():131] Uploaded file /tmp/tmpr448v32pwandb/zhxyr1zq-wandb-metadata.json
+2024-04-20 19:21:28,856 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_created():271] file/dir created: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/requirements.txt
+2024-04-20 19:21:29,964 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:31,857 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_created():271] file/dir created: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/output.log
+2024-04-20 19:21:33,857 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_modified():288] file/dir modified: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/output.log
+2024-04-20 19:21:35,348 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:40,349 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:42,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:21:42,900 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:21:42,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:21:45,967 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:50,968 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:55,972 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:21:56,864 INFO    Thread-12 :53394 [dir_watcher.py:_on_file_modified():288] file/dir modified: /teamspace/studios/this_studio/nanoGPT/wandb/run-20240420_192124-gyjy7tns/files/config.yaml
+2024-04-20 19:21:57,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:21:57,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:21:57,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:22:02,037 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:07,038 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:12,039 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:12,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:22:12,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:22:12,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:22:18,002 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:23,003 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:24,936 DEBUG   SystemMonitor:53394 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-20 19:22:24,937 DEBUG   SenderThread:53394 [sender.py:send():379] send: stats
+2024-04-20 19:22:27,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:22:27,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:22:27,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:22:28,058 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:33,059 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:38,060 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:42,900 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:22:42,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:22:42,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:22:44,017 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:49,018 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:54,018 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:22:54,938 DEBUG   SenderThread:53394 [sender.py:send():379] send: stats
+2024-04-20 19:22:57,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:22:57,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:22:57,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:22:59,019 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:04,019 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:09,020 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:12,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:23:12,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:23:12,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:23:14,978 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:19,978 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:24,939 DEBUG   SenderThread:53394 [sender.py:send():379] send: stats
+2024-04-20 19:23:25,940 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:27,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:23:27,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:23:27,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:23:31,045 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:36,046 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:41,046 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:42,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:23:42,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:23:42,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:23:47,004 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:52,005 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:23:54,940 DEBUG   SenderThread:53394 [sender.py:send():379] send: stats
+2024-04-20 19:23:57,901 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-20 19:23:57,901 DEBUG   SenderThread:53394 [sender.py:send_request():406] send_request: stop_status
+2024-04-20 19:23:57,943 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-20 19:23:58,059 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:24:03,059 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report
+2024-04-20 19:24:08,060 DEBUG   HandlerThread:53394 [handler.py:handle_request():146] handle_request: status_report

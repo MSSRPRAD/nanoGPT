@@ -1,0 +1,178 @@
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/nanoGPT/train.py", line 264, in <module>
+    losses = estimate_loss()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/teamspace/studios/this_studio/nanoGPT/train.py", line 224, in estimate_loss
+    logits, loss = model(X, Y)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 655, in catch_errors
+    return callback(frame, cache_entry, hooks, frame_state)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 727, in _convert_frame
+    result = inner_convert(frame, cache_entry, hooks, frame_state)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 383, in _convert_frame_assert
+    compiled_product = _compile(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 646, in _compile
+    guarded_code = compile_inner(code, one_graph, hooks, transform)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 244, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 562, in compile_inner
+    out_code = transform_code_object(code, transform)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/bytecode_transformation.py", line 1033, in transform_code_object
+    transformations(instructions, code_options)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 151, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 527, in transform
+    tracer.run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2128, in run
+    super().run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 818, in run
+    and self.step()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 781, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 470, in wrapper
+    return inner_fn(self, inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1213, in CALL_FUNCTION
+    self.call_function(fn, args, {})
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 652, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/nn_module.py", line 328, in call_function
+    return tx.inline_user_function_return(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 688, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2261, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2376, in inline_call_
+    tracer.run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 818, in run
+    and self.step()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 781, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 470, in wrapper
+    return inner_fn(self, inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1252, in CALL_FUNCTION_EX
+    self.call_function(fn, argsvars.items, kwargsvars.items)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 652, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 294, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 248, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 81, in call_function
+    return tx.inline_user_function_return(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 688, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2261, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2376, in inline_call_
+    tracer.run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 818, in run
+    and self.step()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 781, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 470, in wrapper
+    return inner_fn(self, inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1213, in CALL_FUNCTION
+    self.call_function(fn, args, {})
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 652, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/nn_module.py", line 328, in call_function
+    return tx.inline_user_function_return(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 688, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2261, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2376, in inline_call_
+    tracer.run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 818, in run
+    and self.step()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 781, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 470, in wrapper
+    return inner_fn(self, inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1252, in CALL_FUNCTION_EX
+    self.call_function(fn, argsvars.items, kwargsvars.items)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 652, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 294, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 248, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 81, in call_function
+    return tx.inline_user_function_return(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 688, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2261, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2376, in inline_call_
+    tracer.run()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 818, in run
+    and self.step()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 781, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 470, in wrapper
+    return inner_fn(self, inst)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1213, in CALL_FUNCTION
+    self.call_function(fn, args, {})
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 652, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/torch.py", line 542, in call_function
+    tensor_variable = wrap_fx_proxy(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/builder.py", line 1314, in wrap_fx_proxy
+    return wrap_fx_proxy_cls(target_cls=TensorVariable, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/variables/builder.py", line 1399, in wrap_fx_proxy_cls
+    example_value = get_fake_value(proxy.node, tx, allow_non_graph_fake=True)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1525, in get_fake_value
+    raise TorchRuntimeError(str(e)).with_traceback(e.__traceback__) from None
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1486, in get_fake_value
+    ret_val = wrap_fake_exception(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1027, in wrap_fake_exception
+    return fn()
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1487, in <lambda>
+    lambda: run_node(tx.output, node, args, kwargs, nnmodule)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1592, in run_node
+    raise RuntimeError(fn_str + str(e)).with_traceback(e.__traceback__) from e
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 1571, in run_node
+    return node.target(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/utils/_stats.py", line 20, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_subclasses/fake_tensor.py", line 1392, in __torch_dispatch__
+    return self.dispatch(func, types, args, kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_subclasses/fake_tensor.py", line 1712, in dispatch
+    r = func(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_ops.py", line 513, in __call__
+    return self._op(*args, **(kwargs or {}))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_meta_registrations.py", line 3836, in meta_bmm
+    return common_meta_baddbmm_bmm(self, mat2, True)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_meta_registrations.py", line 3814, in common_meta_baddbmm_bmm
+    torch._check(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/__init__.py", line 1087, in _check
+    _check_with(RuntimeError, cond, message)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/__init__.py", line 1070, in _check_with
+    raise error_type(message_evaluated)
+torch._dynamo.exc.TorchRuntimeError: Failed running call_function <built-in method bmm of type object at 0x7f8405afb840>(*(FakeTensor(..., device='cuda:0', size=(24, 1000, 384)), FakeTensor(..., device='cuda:0', size=(384, 12, 32), requires_grad=True)), **{}):
+Expected size for first two dimensions of batch2 tensor to be: [24, 384] but got: [384, 12].
+from user code:
+   File "/teamspace/studios/this_studio/nanoGPT/model.py", line 206, in forward
+    x = block(x)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/teamspace/studios/this_studio/nanoGPT/model.py", line 126, in forward
+    x = x + self.attn(self.ln_1(x))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/teamspace/studios/this_studio/nanoGPT/model.py", line 69, in forward
+    vd = torch.bmm(x, c_attn_vd.transpose(1, 2))
+Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
