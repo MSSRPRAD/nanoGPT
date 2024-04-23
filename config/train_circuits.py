@@ -9,13 +9,13 @@ log_interval = 10 # don't print too too often
 # we expect to overfit on this small dataset, so only save when val improves
 always_save_checkpoint = False
 
-wandb_log = True # override via command line if you like
+wandb_log = False # override via command line if you like
 wandb_project = 'ICL_BPHC'
 wandb_run_name = 'circuits-run'
 
 dataset = 'circuits'
 gradient_accumulation_steps = 1
-batch_size = 16
+batch_size = 4
 block_size = 1000 # context of up to 1000 previous words
 
 # baby GPT model :)
