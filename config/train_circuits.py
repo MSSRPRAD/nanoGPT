@@ -33,5 +33,5 @@ beta2 = 0.90 # make a bit bigger because number of tokens per iter is small
 warmup_iters = 100 # not super necessary potentially
 
 # on macbook also add
-# device = 'cpu'  # run on cpu only
-compile = True # Torch compile the model
+device = 'cpu'  # run on cpu only
+compile = False # Torch compile the model

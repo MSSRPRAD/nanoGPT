@@ -1,0 +1,45 @@
+2024-04-23 22:50:17,985 INFO    StreamThr :11852 [internal.py:wandb_internal():86] W&B internal server running at pid: 11852, started at: 2024-04-23 22:50:17.985543
+2024-04-23 22:50:17,986 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: status
+2024-04-23 22:50:17,993 INFO    WriterThread:11852 [datastore.py:open_for_write():87] open: /home/mpradyumna/Documents/GitHub/nanoGPT/wandb/run-20240423_225017-6e3z6g0a/run-6e3z6g0a.wandb
+2024-04-23 22:50:17,994 DEBUG   SenderThread:11852 [sender.py:send():379] send: header
+2024-04-23 22:50:17,998 DEBUG   SenderThread:11852 [sender.py:send():379] send: run
+2024-04-23 22:50:18,852 INFO    SenderThread:11852 [dir_watcher.py:__init__():211] watching files in: /home/mpradyumna/Documents/GitHub/nanoGPT/wandb/run-20240423_225017-6e3z6g0a/files
+2024-04-23 22:50:18,852 INFO    SenderThread:11852 [sender.py:_start_run_threads():1124] run started: 6e3z6g0a with start time 1713892817.991559
+2024-04-23 22:50:18,858 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: check_version
+2024-04-23 22:50:18,858 DEBUG   SenderThread:11852 [sender.py:send_request():406] send_request: check_version
+2024-04-23 22:50:18,932 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: run_start
+2024-04-23 22:50:18,933 DEBUG   HandlerThread:11852 [system_info.py:__init__():26] System info init
+2024-04-23 22:50:18,933 DEBUG   HandlerThread:11852 [system_info.py:__init__():41] System info init done
+2024-04-23 22:50:18,933 INFO    HandlerThread:11852 [system_monitor.py:start():194] Starting system monitor
+2024-04-23 22:50:18,933 INFO    SystemMonitor:11852 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-23 22:50:18,933 INFO    HandlerThread:11852 [system_monitor.py:probe():214] Collecting system info
+2024-04-23 22:50:18,933 INFO    SystemMonitor:11852 [interfaces.py:start():190] Started cpu monitoring
+2024-04-23 22:50:18,933 INFO    SystemMonitor:11852 [interfaces.py:start():190] Started disk monitoring
+2024-04-23 22:50:18,934 INFO    SystemMonitor:11852 [interfaces.py:start():190] Started memory monitoring
+2024-04-23 22:50:18,935 INFO    SystemMonitor:11852 [interfaces.py:start():190] Started network monitoring
+2024-04-23 22:50:18,938 DEBUG   HandlerThread:11852 [system_info.py:probe():150] Probing system
+2024-04-23 22:50:18,940 DEBUG   HandlerThread:11852 [system_info.py:_probe_git():135] Probing git
+2024-04-23 22:50:18,944 DEBUG   HandlerThread:11852 [system_info.py:_probe_git():143] Probing git done
+2024-04-23 22:50:18,944 DEBUG   HandlerThread:11852 [system_info.py:probe():198] Probing system done
+2024-04-23 22:50:18,944 DEBUG   HandlerThread:11852 [system_monitor.py:probe():223] {'os': 'Linux-6.8.4-200.fc39.x86_64-x86_64-with-glibc2.38', 'python': '3.12.2', 'heartbeatAt': '2024-04-23T17:20:18.938949', 'startedAt': '2024-04-23T17:20:17.979249', 'docker': None, 'cuda': None, 'args': ('config/train_circuits.py',), 'state': 'running', 'program': '/home/mpradyumna/Documents/GitHub/nanoGPT/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/MSSRPRAD/nanoGPT.git', 'commit': '60ecbae816dafc8686e0fd040fc40597a710e5d7'}, 'email': '98510624+MSSRPRAD@users.noreply.github.com', 'root': '/home/mpradyumna/Documents/GitHub/nanoGPT', 'host': 'fedora', 'username': 'mpradyumna', 'executable': '/home/mpradyumna/Documents/GitHub/nanoGPT/venv/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 3478.417375, 'min': 400.0, 'max': 3900.0}, 'cpu_freq_per_core': [{'current': 935.083, 'min': 400.0, 'max': 3900.0}, {'current': 3503.391, 'min': 400.0, 'max': 3900.0}, {'current': 3499.964, 'min': 400.0, 'max': 3900.0}, {'current': 1162.158, 'min': 400.0, 'max': 3900.0}, {'current': 1134.584, 'min': 400.0, 'max': 3900.0}, {'current': 3500.035, 'min': 400.0, 'max': 3900.0}, {'current': 3500.0, 'min': 400.0, 'max': 3900.0}, {'current': 3500.0, 'min': 400.0, 'max': 3900.0}], 'disk': {'/': {'total': 99.0009765625, 'used': 25.970600128173828}}, 'memory': {'total': 15.361743927001953}}
+2024-04-23 22:50:18,945 INFO    HandlerThread:11852 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-23 22:50:18,945 INFO    HandlerThread:11852 [system_monitor.py:probe():227] Publishing system info
+2024-04-23 22:50:18,945 INFO    HandlerThread:11852 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-23 22:50:18,948 DEBUG   SenderThread:11852 [sender.py:send():379] send: files
+2024-04-23 22:50:18,948 INFO    SenderThread:11852 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-23 22:50:19,040 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-23 22:50:19,041 DEBUG   SenderThread:11852 [sender.py:send_request():406] send_request: python_packages
+2024-04-23 22:50:19,082 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-23 22:50:19,082 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-23 22:50:19,083 DEBUG   SenderThread:11852 [sender.py:send_request():406] send_request: stop_status
+2024-04-23 22:50:19,579 DEBUG   SenderThread:11852 [sender.py:send():379] send: telemetry
+2024-04-23 22:50:19,854 INFO    Thread-12 :11852 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mpradyumna/Documents/GitHub/nanoGPT/wandb/run-20240423_225017-6e3z6g0a/files/wandb-metadata.json
+2024-04-23 22:50:19,854 INFO    Thread-12 :11852 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mpradyumna/Documents/GitHub/nanoGPT/wandb/run-20240423_225017-6e3z6g0a/files/requirements.txt
+2024-04-23 22:50:20,709 INFO    wandb-upload_0:11852 [upload_job.py:push():131] Uploaded file /tmp/tmpns3si64xwandb/8ome3blm-wandb-metadata.json
+2024-04-23 22:50:23,580 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:50:28,584 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:50:33,708 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:50:34,056 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-23 22:50:34,057 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-23 22:50:34,058 DEBUG   SenderThread:11852 [sender.py:send_request():406] send_request: stop_status
+2024-04-23 22:50:39,547 DEBUG   HandlerThread:11852 [handler.py:handle_request():146] handle_request: status_report

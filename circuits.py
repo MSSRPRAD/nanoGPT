@@ -104,6 +104,11 @@ def save_attentions(attentions, output_dir, x_labels, y_labels):
 import itertools
 import seaborn as sns
 def argand(a, output_dir, layer_idx, head_idx):
+    # print(a.shape)
+    # a = a.tolist()
+    # print(a)
+    # input()
+
     # Calculate log magnitudes and angles
     log_magnitudes = [np.log(np.abs(z)) for z in a]
     # log_magnitudes = [np.log(z) for z in log_magnitudes]
@@ -140,6 +145,26 @@ def argand(a, output_dir, layer_idx, head_idx):
 
 # -----------------------------------------------------------------------------
 
+def generate_histogram(data, bin_width=0.25, filename="eigenvalue_histograms"):
+
+    num_bins = 8
+
+    bins = np.arange(-1, 1.25, bin_width)
+
+    # Create histogram
+    plt.hist(data, bins=bins, stacked=True)
+
+    plt.xlabel('Value')
+    plt.ylabel('Frequency')
+    plt.title('Histogram of Eigenvalues (sigma eig / sigma abs(eig))')
+    plt.grid(True, linestyle='--', alpha=0.7)
+
+    plt.xticks(np.arange(-1, 1.25, bin_width))
+    plt.yticks(np.arange(0, len(data), 1))
+    plt.savefig(filename, dpi=300)
+
+# -----------------------------------------------------------------------------
+
 # run generation
 out_basedir = "circuits"
 attn_imagedir = out_basedir + "/attention_images"
@@ -169,23 +194,62 @@ with torch.no_grad():
         W_e = model.transformer.wte.weight
         print(W_u.shape, W_e.shape)
         idx = 0
+        print('---------')
         for block in model.transformer.h:
             W_o = block.attn.c_proj.weight
             W_v = block.attn.c_attn_v
+            eigsums = []
+            foo = 0
             for it in W_v:
+                print(foo)
+                foo += 1
                 W_vh = it.weight
                 matrix = W_vh @  W_e @ W_u @ W_o
                 # print(matrix.shape)
                 # print("reached here")
                 eigenvalue = torch.linalg.eigvals(matrix).tolist()
-                # print(eigenvalue[0].real)
+                argand(eigenvalue, eigenvals_dir, 0, foo)
+                # print(eigenvalue[0].real, eigenvalue[0])
                 # print(eigenvalue[0].imag)
-                # print(eigenvalue)
-                argand(eigenvalue, eigenvals_dir, 0, idx)
+                pos = 0
+                neg = 0
+                eq = 0     
+                for eig in eigenvalue:
+                    if eig.imag == 0:
+                        if eig.real > 0:
+                            pos += 1
+                        elif eig.real < 0:
+                            neg += 1
+                        else:
+                            eq += 1
+                    # print(eig.real/np.sqrt(eig.real*eig.real + eig.imag*eig.imag), eig.imag/np.sqrt(eig.real*eig.real + eig.imag*eig.imag))
+                print("trace:")
+                print(torch.trace(matrix))
+                eig = eigenvalue[0]
+                id = 0
+                eig_sum = np.sqrt(eig.real*eig.real + eig.imag*eig.imag)
+                # print("eig_sum")
+                # print(eig_sum)
+                for i in eigenvalue:
+                    if id != 0:
+                        eig += i
+                        eig_sum += np.sqrt(i.real*i.real + i.imag*i.imag)
+                    # print("eig_sum")
+                    # print(eig_sum)
+                    id += 1
+                       
+                eigsums.append(eig.real/eig_sum)
+                print("sum of eigenvalues:")
+                print(eig / eig_sum)
+                # print("pos|neg|eq")
+                # print(pos, neg, eq)
+                print('% pos|% neg|% eq')
+                print(pos/len(eigenvalue), neg/len(eigenvalue), eq/len(eigenvalue))
                 idx += 1
                 print('---------')
                 # print(W_vh.shape)
                 # print(W_o.shape)
                 # input()
+            generate_histogram(eigsums, 0.25, eigenvals_dir + "/eigenvalue_hist.png")
         print('---------------END')
 
