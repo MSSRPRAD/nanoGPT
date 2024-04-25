@@ -145,7 +145,7 @@ def argand(a, output_dir, layer_idx, head_idx):
 
 # -----------------------------------------------------------------------------
 
-def generate_histogram(data, bin_width=0.25, filename="eigenvalue_histograms"):
+def generate_histogram(data, bin_width=0.125, filename="eigenvalue_histograms"):
 
     num_bins = 8
 
@@ -158,8 +158,8 @@ def generate_histogram(data, bin_width=0.25, filename="eigenvalue_histograms"):
     plt.ylabel('Frequency')
     plt.title('Histogram of Eigenvalues (sigma eig / sigma abs(eig))')
     plt.grid(True, linestyle='--', alpha=0.7)
-
-    plt.xticks(np.arange(-1, 1.25, bin_width))
+    plt.tight_layout()
+    plt.xticks(np.arange(-1, 1.25, bin_width), rotation=45).Text()
     plt.yticks(np.arange(0, len(data), 1))
     plt.savefig(filename, dpi=300)
 
@@ -250,6 +250,6 @@ with torch.no_grad():
                 # print(W_vh.shape)
                 # print(W_o.shape)
                 # input()
-            generate_histogram(eigsums, 0.25, eigenvals_dir + "/eigenvalue_hist.png")
+            generate_histogram(eigsums, 0.125, eigenvals_dir + "/eigenvalue_hist.png")
         print('---------------END')
 
